@@ -1,1 +1,1 @@
-Example of a MERN application.
+Client part.
