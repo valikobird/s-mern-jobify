@@ -39,6 +39,7 @@ html {
   /* light mode */
   --backgroundColor: var(--grey-50);
   --textColor: var(--grey-900);
+  --text-secondary-color: var(--grey-500);
 
   /* dark mode */
   --darkMode-backgroundColor: var(--grey-900);
@@ -49,6 +50,10 @@ html {
   --view-width: 90vw;
   --fixed-width: 600px;
   --max-width: 1120px;
+  --fluid-width: 90vw;
+
+  --nav-height: 6rem;
+  --border-radius: 0.25rem;
 
   --transition: 0.3s ease-in-out all;
 
@@ -136,4 +141,36 @@ ul {
   border-radius: 50%;
   margin: 0 auto;
   animation: spinner 1s linear infinite;
+}
+
+/* ============= PROJECT CSS =============== */
+
+.container {
+  width: var(--fluid-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.btn {
+  cursor: pointer;
+  color: white;
+  background: var(--primary-500);
+  border: transparent;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+  text-transform: capitalize;
+  display: inline-block;
+
+  &:hover {
+    background: var(--primary-700);
+    box-shadow: var(--shadow-3);
+  }
+}
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
 }
