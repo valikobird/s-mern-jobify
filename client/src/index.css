@@ -37,6 +37,7 @@ html {
   --grey-900: #0f172a;
 
   --white: #fff;
+  --red-dark: #842029;
 
   /* light mode */
   --background-color: var(--grey-50);
