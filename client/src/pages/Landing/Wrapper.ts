@@ -33,6 +33,10 @@ const Wrapper = styled.section`
     max-width: 35rem;
   }
 
+  .btn {
+    padding: 0.75rem 1rem;
+  }
+
   .register-link {
     margin-right: 1rem;
   }
