@@ -1,0 +1,29 @@
+{
+  "name": "mern-2025",
+  "version": "0.1.0",
+  "description": "Example of a MERN application.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "setup-project": "npm i && cd client && npm i",
+    "dev": "nodemon server.js",
+    "watch": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valikobird/s-mern-jobify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valikobird/s-mern-jobify/issues"
+  },
+  "homepage": "https://github.com/valikobird/s-mern-jobify#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.10"
+  }
+}
