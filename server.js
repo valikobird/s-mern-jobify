@@ -89,6 +89,15 @@ app.delete('/api/v1/jobs/:id', (req, res) => {
   res.status(200).json({ msg: 'job deleted' });
 });
 
+app.all(/.*/, (req, res) => {
+  res.status(404).send('Not found');
+});
+
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(500).json({ msg: 'Internal Server Error' });
+});
+
 const port = process.env.PORT || 5100;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
