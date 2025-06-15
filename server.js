@@ -21,10 +21,6 @@ app.get('/', (req, res) => {
   res.send('Test');
 });
 
-app.post('/', (req, res) => {
-  res.json({ message: 'data received', data: req.body });
-});
-
 app.use('/api/v1/jobs', jobRouter);
 
 app.all(/.*/, (req, res) => {
