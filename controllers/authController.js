@@ -43,3 +43,8 @@ export const login = async (req, res) => {
   });
   res.status(StatusCodes.OK).json({ msg: 'User login successfully' });
 };
+
+export const logout = (req, res) => {
+  res.cookie('token', null, { httpOnly: true, expires: new Date(Date.now()) });
+  res.status(StatusCodes.OK).json({ msg: 'User logout successfully' });
+};
