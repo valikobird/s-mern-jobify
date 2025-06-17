@@ -14,6 +14,9 @@ import checkDefaultTheme from './utils/theme';
 import { registerAction } from './pages/Register';
 import { loginAction } from './pages/Login';
 
+// loaders
+import { dasboardLayoutLoader } from './pages/DashboardLayout';
+
 checkDefaultTheme();
 
 const router = createBrowserRouter([
@@ -32,6 +35,7 @@ const router = createBrowserRouter([
       {
         path: 'dashboard',
         element: <DashboardLayout />,
+        loader: dasboardLayoutLoader,
         children: [{ index: true, element: <AddJob /> }],
       },
     ],

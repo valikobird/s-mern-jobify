@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import Wrapper from './Wrapper';
 import { BigSidebar, Navbar, SmallSidebar } from '../../components';
 import { useState } from 'react';
@@ -6,8 +6,7 @@ import { DashboardContext } from './Context';
 import checkDefaultTheme from '../../utils/theme';
 
 const DashboardLayout = () => {
-  const user = { name: 'valiko' };
-
+  const { user } = useLoaderData();
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(checkDefaultTheme());
 
@@ -45,7 +44,7 @@ const DashboardLayout = () => {
           <div>
             <Navbar />
             <div className="dashboard-page">
-              <Outlet />
+              <Outlet context={{ user }} />
             </div>
           </div>
         </main>
