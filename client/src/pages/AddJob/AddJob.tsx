@@ -2,9 +2,10 @@ import { Form, useNavigation, useOutletContext } from 'react-router-dom';
 import Wrapper from './Wrapper';
 import { FormRow, FormRowSelect } from '../../components';
 import { JOB_STATUS, JOB_TYPE } from '../../../../utils/constants.js';
+import type { DashboardOutletContext } from '../../interfaces';
 
 const AddJob = () => {
-  const { user } = useOutletContext();
+  const { user }: DashboardOutletContext = useOutletContext();
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
 

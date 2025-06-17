@@ -13,6 +13,7 @@ import checkDefaultTheme from './utils/theme';
 // actions
 import { registerAction } from './pages/Register';
 import { loginAction } from './pages/Login';
+import { addJobAction } from './pages/AddJob';
 
 // loaders
 import { dasboardLayoutLoader } from './pages/DashboardLayout';
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
         path: 'dashboard',
         element: <DashboardLayout />,
         loader: dasboardLayoutLoader,
-        children: [{ index: true, element: <AddJob /> }],
+        children: [{ index: true, element: <AddJob />, action: addJobAction }],
       },
     ],
   },

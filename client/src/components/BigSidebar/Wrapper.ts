@@ -64,6 +64,10 @@ const Wrapper = styled.aside`
     .active {
       color: var(--primary-500);
     }
+
+    .pending {
+      background-color: var(--background-color);
+    }
   }
 `;
 
