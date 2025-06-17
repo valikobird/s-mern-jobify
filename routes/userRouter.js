@@ -5,11 +5,16 @@ import {
   updateUser,
 } from '../controllers/userController.js';
 import { validateUpdateUserInput } from '../middleware/validationMiddleware.js';
+import { authorizePermissions } from '../middleware/authMiddleware.js';
+import { USER_ROLES } from '../utils/constants.js';
 
 const router = Router();
 
 router.get('/current-user', getCurrentUser);
-router.get('/admin/app-stats', getApplicationStats);
+router.get('/admin/app-stats', [
+  authorizePermissions(USER_ROLES.ADMIN),
+  getApplicationStats,
+]);
 router.patch('/update-user', validateUpdateUserInput, updateUser);
 
 export default router;
