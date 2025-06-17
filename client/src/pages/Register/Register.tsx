@@ -1,11 +1,11 @@
 import Wrapper from './Wrapper';
 import { Logo, FormRow } from '../../components';
-import { Link } from 'react-router-dom';
+import { Form, Link } from 'react-router-dom';
 
 const Register = () => {
   return (
     <Wrapper>
-      <form className="form">
+      <Form method="post" className="form">
         <Logo />
         <h4>Register</h4>
         <FormRow type="text" name="name" defaultValue="valiko" />
@@ -27,7 +27,7 @@ const Register = () => {
             login
           </Link>
         </p>
-      </form>
+      </Form>
     </Wrapper>
   );
 };
