@@ -3,7 +3,7 @@ import Wrapper from './Wrapper';
 import { BigSidebar, Navbar, SmallSidebar } from '../../components';
 import { useState } from 'react';
 import { DashboardContext } from './Context';
-import { checkDefaultTheme } from '../../App';
+import checkDefaultTheme from '../../utils/theme';
 
 const DashboardLayout = () => {
   const user = { name: 'valiko' };

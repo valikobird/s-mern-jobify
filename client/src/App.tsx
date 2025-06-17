@@ -9,12 +9,7 @@ import {
   Register,
 } from './pages';
 import { registerAction } from './pages/Register';
-
-export const checkDefaultTheme = () => {
-  const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
-  document.body.classList.toggle('dark-theme', isDarkTheme);
-  return isDarkTheme;
-};
+import checkDefaultTheme from './utils/theme';
 
 checkDefaultTheme();
 
