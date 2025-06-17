@@ -6,8 +6,10 @@
   "type": "module",
   "scripts": {
     "setup-project": "npm i && cd client && npm i",
-    "dev": "nodemon server.js",
-    "watch": "node --watch server.js"
+    "server-nodemon": "nodemon server.js",
+    "server-watch": "node --watch server.js",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently --kill-others-on-fail \"npm run server-watch\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   "homepage": "https://github.com/valikobird/s-mern-jobify#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "concurrently": "^9.1.2",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
