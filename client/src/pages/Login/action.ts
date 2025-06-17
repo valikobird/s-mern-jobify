@@ -1,17 +1,16 @@
-import { AxiosError } from 'axios';
-import customFetch from '../../utils/customFetch';
-import { redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { redirect } from 'react-router-dom';
 import type { ActionProps } from '../../interfaces';
+import customFetch from '../../utils/customFetch';
+import { AxiosError } from 'axios';
 
 const action = async ({ request }: ActionProps) => {
-  const fromData = await request.formData();
-  const data = Object.fromEntries(fromData);
-
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
   try {
-    await customFetch.post('/auth/register', data);
-    toast.success('Registration successful');
-    return redirect('/login');
+    await customFetch.post('/auth/login', data);
+    toast.success('Login successful');
+    return redirect('/dashboard');
   } catch (err) {
     const axiosError = err as AxiosError;
     if (axiosError.isAxiosError) {

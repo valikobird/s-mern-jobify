@@ -8,8 +8,11 @@ import {
   Login,
   Register,
 } from './pages';
-import { registerAction } from './pages/Register';
 import checkDefaultTheme from './utils/theme';
+
+// actions
+import { registerAction } from './pages/Register';
+import { loginAction } from './pages/Login';
 
 checkDefaultTheme();
 
@@ -25,7 +28,7 @@ const router = createBrowserRouter([
         element: <Register />,
         action: registerAction,
       },
-      { path: 'login', element: <Login /> },
+      { path: 'login', element: <Login />, action: loginAction },
       {
         path: 'dashboard',
         element: <DashboardLayout />,
