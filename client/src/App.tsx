@@ -1,13 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import {
-  AddJob,
-  DashboardLayout,
-  Error,
-  HomeLayout,
-  Landing,
-  Login,
-  Register,
-} from './pages';
+import { AddJob, AllJobs, DashboardLayout, Error, HomeLayout, Landing, Login, Register } from './pages';
 import checkDefaultTheme from './utils/theme';
 
 // actions
@@ -17,6 +9,7 @@ import { addJobAction } from './pages/AddJob';
 
 // loaders
 import { dasboardLayoutLoader } from './pages/DashboardLayout';
+import { allJobsLoader } from './pages/AllJobs';
 
 checkDefaultTheme();
 
@@ -37,7 +30,10 @@ const router = createBrowserRouter([
         path: 'dashboard',
         element: <DashboardLayout />,
         loader: dasboardLayoutLoader,
-        children: [{ index: true, element: <AddJob />, action: addJobAction }],
+        children: [
+          { index: true, element: <AddJob />, action: addJobAction },
+          { path: 'all-jobs', element: <AllJobs />, loader: allJobsLoader },
+        ],
       },
     ],
   },
