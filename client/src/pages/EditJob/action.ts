@@ -13,8 +13,6 @@ const action = async ({ request, params }) => {
     toast.error(err?.response?.data?.msg);
     return error;
   }
-
-  return null;
 };
 
 export default action;
