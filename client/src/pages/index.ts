@@ -6,3 +6,4 @@ export { default as Login } from './Login';
 export { default as DashboardLayout } from './DashboardLayout';
 export { default as AddJob } from './AddJob';
 export { default as AllJobs } from './AllJobs';
+export { default as EditJob } from './EditJob';

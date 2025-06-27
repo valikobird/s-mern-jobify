@@ -1,15 +1,17 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { AddJob, AllJobs, DashboardLayout, Error, HomeLayout, Landing, Login, Register } from './pages';
+import { AddJob, AllJobs, DashboardLayout, EditJob, Error, HomeLayout, Landing, Login, Register } from './pages';
 import checkDefaultTheme from './utils/theme';
 
 // actions
 import { registerAction } from './pages/Register';
 import { loginAction } from './pages/Login';
 import { addJobAction } from './pages/AddJob';
+import { editJobAction } from './pages/EditJob';
 
 // loaders
 import { dasboardLayoutLoader } from './pages/DashboardLayout';
 import { allJobsLoader } from './pages/AllJobs';
+import { editJobLoader } from './pages/EditJob';
 
 checkDefaultTheme();
 
@@ -33,6 +35,7 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <AddJob />, action: addJobAction },
           { path: 'all-jobs', element: <AllJobs />, loader: allJobsLoader },
+          { path: 'edit-job/:id', element: <EditJob />, loader: editJobLoader, action: editJobAction },
         ],
       },
     ],

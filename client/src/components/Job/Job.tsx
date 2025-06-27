@@ -8,6 +8,7 @@ import { Form, Link } from 'react-router-dom';
 day.extend(advancedFormat);
 
 interface JobProps {
+  _id: string;
   position: string;
   company: string;
   jobLocation: string;
@@ -16,7 +17,7 @@ interface JobProps {
   jobStatus: string;
 }
 
-const Job = ({ position, company, jobLocation, jobType, createdAt, jobStatus }: JobProps) => {
+const Job = ({ _id, position, company, jobLocation, jobType, createdAt, jobStatus }: JobProps) => {
   const date = day(createdAt).format('DD MMM YYYY');
 
   return (
@@ -36,7 +37,7 @@ const Job = ({ position, company, jobLocation, jobType, createdAt, jobStatus }: 
           <div className={`status ${jobStatus}`}>{jobStatus}</div>
         </div>
         <footer className="actions">
-          <Link to="#" className="btn edit-btn">
+          <Link to={`../edit-job/${_id}`} className="btn edit-btn">
             Edit
           </Link>
           <Form>
