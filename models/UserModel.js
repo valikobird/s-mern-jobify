@@ -19,8 +19,10 @@ const UserSchema = new mongoose.Schema(
       enum: Object.values(USER_ROLES),
       default: 'user',
     },
+    avatar: String,
+    avatarPublicId: String,
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 UserSchema.methods.toJSON = function () {
