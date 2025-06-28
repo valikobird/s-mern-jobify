@@ -28,13 +28,6 @@ const Wrapper = styled.section`
     row-gap: 1rem;
   }
 
-  .form-btn {
-    align-self: end;
-    margin-top: 1rem;
-    display: grid;
-    place-items: center;
-  }
-
   @media (min-width: 992px) {
     .form-center {
       grid-template-columns: 1fr 1fr;

@@ -227,6 +227,13 @@ ul {
     height: 2rem;
     font-size: var(--medium-text);
   }
+
+  .form-btn {
+    align-self: end;
+    margin-top: 1rem;
+    display: grid;
+    place-items: center;
+  }
 }
 
 .pending {
