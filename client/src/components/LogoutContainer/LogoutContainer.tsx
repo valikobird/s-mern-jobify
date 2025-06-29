@@ -13,12 +13,8 @@ const LogoutContainer = () => {
 
   return (
     <Wrapper>
-      <button
-        type="button"
-        className="btn logout-btn"
-        onClick={handleToggleClick}
-      >
-        <FaUserCircle />
+      <button type="button" className="btn logout-btn" onClick={handleToggleClick}>
+        {user.avatar ? <img src={user.avatar} alt="avatar" className="img" /> : <FaUserCircle />}
         {user?.name}
         <FaCaretDown />
       </button>
