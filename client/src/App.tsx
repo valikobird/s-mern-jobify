@@ -11,6 +11,7 @@ import {
   Login,
   Profile,
   Register,
+  Stats,
 } from './pages';
 import checkDefaultTheme from './utils/theme';
 
@@ -27,6 +28,7 @@ import { dasboardLayoutLoader } from './pages/DashboardLayout';
 import { allJobsLoader } from './pages/AllJobs';
 import { editJobLoader } from './pages/EditJob';
 import { adminLoader } from './pages/Admin';
+import { statsLoader } from './pages/Stats';
 
 checkDefaultTheme();
 
@@ -52,8 +54,9 @@ const router = createBrowserRouter([
           { path: 'all-jobs', element: <AllJobs />, loader: allJobsLoader },
           { path: 'edit-job/:id', element: <EditJob />, loader: editJobLoader, action: editJobAction },
           { path: 'delete-job/:id', action: deleteJobAction },
-          { path: 'stats', element: <Admin />, loader: adminLoader },
+          { path: 'admin', element: <Admin />, loader: adminLoader },
           { path: 'profile', element: <Profile />, action: profileAction },
+          { path: 'stats', element: <Stats />, loader: statsLoader },
         ],
       },
     ],
