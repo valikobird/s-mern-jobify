@@ -11,7 +11,7 @@ const action = async ({ request, params }) => {
     return redirect('/dashboard/all-jobs');
   } catch (err) {
     toast.error(err?.response?.data?.msg);
-    return error;
+    return err;
   }
 };
 
