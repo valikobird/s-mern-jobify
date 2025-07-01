@@ -3,10 +3,10 @@ import { JobsContainer, SearchContainer } from '../../components';
 import { AllJobsContext } from './context';
 
 const AllJobs = () => {
-  const { data } = useLoaderData();
+  const { data, searchValues } = useLoaderData();
 
   return (
-    <AllJobsContext.Provider value={{ data }}>
+    <AllJobsContext.Provider value={{ data, searchValues }}>
       <SearchContainer />
       <JobsContainer />
     </AllJobsContext.Provider>
