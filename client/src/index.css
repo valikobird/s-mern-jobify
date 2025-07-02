@@ -153,7 +153,9 @@ ul {
   border: none;
   border-top: 8px solid var(--primary-500);
   border-bottom: 8px solid var(--primary-500);
-  border-radius: 50%;
+  border-right: 8px solid darkorange;
+  border-left: 8px solid darkorange;
+  border-radius: 45%;
   margin: 0 auto;
   animation: spinner 1s linear infinite;
 }
