@@ -1,8 +1,17 @@
 import customFetch from '../../utils/customFetch';
 
-const loader = async () => {
-  const response = await customFetch.get('/jobs/stats');
-  return response.data;
+export const statsQuery = {
+  queryKey: ['stats'],
+  queryFn: async () => {
+    const response = await customFetch.get('/jobs/stats');
+    return response.data;
+  },
+};
+
+const loader = (queryClient) => {
+  return async () => {
+    await queryClient.ensureQueryData(statsQuery);
+  };
 };
 
 export default loader;

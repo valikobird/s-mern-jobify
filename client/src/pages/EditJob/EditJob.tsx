@@ -2,9 +2,14 @@ import Wrapper from './Wrapper';
 import { Form, useLoaderData } from 'react-router-dom';
 import { FormRow, FormRowSelect, SubmitBtn } from '../../components';
 import { JOB_STATUS, JOB_TYPE } from '../../../../utils/constants';
+import { useQuery } from '@tanstack/react-query';
+import { getJobQuery } from './loader';
 
 const EditJob = () => {
-  const { job } = useLoaderData();
+  const id = useLoaderData();
+  const {
+    data: { job },
+  } = useQuery(getJobQuery(id));
 
   return (
     <Wrapper>
